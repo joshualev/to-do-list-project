@@ -1,0 +1,29 @@
+{
+  "name": "sei-project-todo",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshualev/to-do-list-project.git"
+  },
+  "author": "Joshua Levinson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshualev/to-do-list-project/issues"
+  },
+  "homepage": "https://github.com/joshualev/to-do-list-project#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-mongodb-session": "^3.1.1",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.4.4"
+  }
+}
