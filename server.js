@@ -6,6 +6,8 @@ const methodOverride = require('method-override')
 const session = require('express-session')
 const flash = require('express-flash')
 const mongoDBSession = require('connect-mongodb-session')
+const cookieParser = require('cookie-parser')
+const bcrypt = require('bcrypt')
 
 const sessionsController = require('./controllers/sessions')
 const usersController = require('.controllers/users')
@@ -23,8 +25,9 @@ const sessionStore = new MongoDBStore({
     collection: 'sessions'
 })
 
+app.use(cookieParser())
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: "process.env.SESSION_SECRET",
     resave: false,
     saveUninitialized: false,
     store: sessionStore,
