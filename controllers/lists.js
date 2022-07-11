@@ -39,6 +39,20 @@ router.get('/:id', (req,res) => {
 })
 
 
+//DELETE
+router.delete('/:id', (req,res) => {
+    List.findOneAndDelete(req.params.id)
+    .exec()
+    .then((list) => {
+        console.log('removed the list item: ', list)
+        res.redirect('/')
+    })
+    .catch((err) => {
+        console.log('error detected at ', err)
+    })
+})
+
+
 //GET   /:id/edit
 router.get('/:id/edit', (req,res) => {
     List.findById(req.params.id)
@@ -80,7 +94,5 @@ router.post('/', (req,res) => {
         res.redirect('/')
     })
 })
-
-
 
 module.exports = router

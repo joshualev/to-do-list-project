@@ -7,7 +7,6 @@ const listSchema = new Schema(
         description: { type: String },
         priority: { type: String, default: "medium"},
         status: { type: Boolean, default: false},
-        dateMade: { type: Date },
         dateDue: { type: Date },
     },
     { timestamps: true }
