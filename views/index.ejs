@@ -1,19 +1,30 @@
 <%- include('partials/header.ejs') %>
 
+<div class="container">
+  
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">   
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Sign out</a></li>
+    </ul>
+  </header>
+  <h1 class="nav col-12 col-md-auto mb-2 row justify-content-center mb-md-0">
+    To-do list
+  </h1>
 
-<h1>All tasks</h1>
-<a href="/new">Add a new list item</a>
-<% for ( let list of lists ) { %> 
-    <div>
-        <p>
-           <a href="/<%= list.id %>"><%= list.title %></a> 
-         </p>
-         <p><%=list.dateDue %> </p>
-         <form action="/<%=list.id%>?_method=delete" method="post">
-            <input type="submit" value="DELETE">
-        </form>
+<div class="list-group list-group-checkable d-grid gap-2 border-0 w-auto">
+<% for ( let i = 0; i < lists.length; i++ ) { %> 
+  <button type="button" class="btn btn-success">Complete</button> <a href="/<%=lists[i].id%>">
+    <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios<%=[i]%>">
+    <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios<%=[i]%>">
+      <%=lists[i].title%>  
+      <span class="d-block small opacity-50"><%=lists[i].dateDue%></span>
+    </label>
+  </a>
+  <% } %> 
+</div>
 
-    <div>
-<% } %> 
 
+</div>
 <%- include('partials/footer.ejs') %>
+

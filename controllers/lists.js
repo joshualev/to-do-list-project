@@ -45,7 +45,7 @@ router.delete('/:id', (req,res) => {
     .exec()
     .then((list) => {
         console.log('removed the list item: ', list)
-        res.redirect('/')
+        res.redirect('/:id')
     })
     .catch((err) => {
         console.log('error detected at ', err)
@@ -67,6 +67,7 @@ router.get('/:id/edit', (req,res) => {
     })
 })
 
+
 //PUT   /:id
 router.put('/:id', (req,res) => {
     if (req.body.status === 'on'){
@@ -84,7 +85,6 @@ router.put('/:id', (req,res) => {
         console.log("error detected", err)
     })
 })
-
 
 //CREATE    /
 router.post('/', (req,res) => {
