@@ -2,10 +2,12 @@
 
 
 <h1>All tasks</h1>
+<a href="/new">Add a new list item</a>
 <% for ( let list of lists ) { %> 
     <div>
         <p>
-            <%= list.title %>
+           <a href="/<%=list.id %>"><%= list.title %></a> 
+           <%=console.log(list.id) %> 
          </p>
     <div>
 <% } %> 

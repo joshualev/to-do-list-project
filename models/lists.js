@@ -5,7 +5,10 @@ const listSchema = new Schema(
     {
         title: { type: String, required: true },
         description: { type: String },
-        status: {type: Boolean, required: true, default: false},
+        priority: { type: String, default: "medium"},
+        status: { type: Boolean, default: false},
+        dateMade: { type: Date },
+        dateDue: { type: Date },
     },
     { timestamps: true }
 )

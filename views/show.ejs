@@ -2,8 +2,18 @@
 
 
 <h1>Show page</h1>
+
+<a href="/">Homepage</a>
+
+
 <p><%= list.title %> </p>
 <p><%= list.description %> </p>
+<p><%= list.priority %> </p>
 <p><%= list.status %> </p>
+<p><%= list.dateMade %> </p>
+<p><%= list.dateDue %> </p>
+
+
+<a href="/<%=list.id%>/edit ">Make Changes</a>
 
 <%- include('partials/footer.ejs') %>

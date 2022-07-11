@@ -1,1 +1,24 @@
+<%- include('partials/header.ejs') %>
+
+
 <h1>Edit page</h1>
+
+<form action="/<%=list.id%>?_method=put" method="post"> 
+
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" value="<%= list.title %>">
+    <label for="description">Description</label>
+    <input type="text" name="description" id="description" value="<%= list.description %>">
+    <label for="status">Status</label> 
+        <input type="checkbox" name="status" id="status"
+        <% if (list.status) { %> 
+            checked
+            <% } %> >
+            <label for="dateDue">Date Due</label> 
+        <input type="date" name="dateDue" id="dateDue" value="<%= list.dateDue %>">    
+            
+<input type="submit" name="edit" id="edit" value="Confirm Changes">
+</form>
+
+
+<%- include('partials/footer.ejs') %>
