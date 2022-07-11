@@ -8,7 +8,6 @@ const PORT = 3000
 const dbURL = "mongodb://localhost:27017/list" 
 
 const app = express()
-const List = require('./models/lists')
 
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
