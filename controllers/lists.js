@@ -4,12 +4,6 @@ const router = express.Router()
 const List = require('../models/lists')
 
 
-// List.insertMany([
-//     {title: 'walk dog', description: 'to the page'},
-//     {title: 'do the laundry', description: 'dry the laundry'},
-//     {title: 'cook dinner', description: 'make it healthy'}
-// ])
-
 //GET   /
 router.get('/', (req,res) => {
     List.find(req.body)
@@ -36,6 +30,7 @@ router.get('/new', (req,res) => {
 router.post('/', (req,res) => {
     List.create(req.body)
     .then((list) => {
+        console.log(list)
         res.redirect('/')
     })
     .catch((err) => {
@@ -69,7 +64,6 @@ router.delete('/:id', (req,res) => {
         console.log('error detected at ', err)
     })
 })
-
 
 
 //PUT   /:id

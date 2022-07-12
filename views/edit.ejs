@@ -1,24 +1,65 @@
 <%- include('partials/header.ejs') %>
 
-
-<h1>Edit page</h1>
-
 <form action="/<%=list.id%>?_method=put" method="post"> 
-
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" value="<%= list.title %>">
-    <label for="description">Description</label>
-    <input type="text" name="description" id="description" value="<%= list.description %>">
-    <label for="status">Status</label> 
-        <input type="checkbox" name="status" id="status"
-        <% if (list.status) { %> 
-            checked
-            <% } %> >
-            <label for="dateDue">Date Due</label> 
-        <input type="date" name="dateDue" id="dateDue" value="<%= list.dateDue %>">    
-            
-<input type="submit" name="edit" id="edit" value="Confirm Changes">
+<div class="card">
+    <div class="card-header">
+     <h1>Update task </h1> 
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Title</h5>
+      <input type="text" name="title" id="title" placeholder="<%=list.title %> ">
+      <h5 class="card-title">Description</h5>
+      <% if (list.description) { %> 
+        <input type="text" name="description" id="description" placeholder="<%=list.description %> ">
+        <% } else { %> 
+            <input type="text" name="description" id="description" placeholder="There is no description set">
+            <% } %> 
+      <h5 class="card-title">Priority</h5>
+        <% if (list.priority === "Low") { %> 
+            <div class="radio">
+                <label><input type="radio" name="priority" value="Low" checked> Low</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="priority" value="Medium"> Medium</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="priority" value="High"> High</label>
+            </div>
+        <% } else if (list.priority ==="Medium") { %> 
+            <div class="radio">
+                <label><input type="radio" name="priority" value="Low"> Low</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="priority" value="Medium" checked> Medium</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="priority" value="High"> High</label>
+            </div>
+        <% } else if (list.priority === "High") { %> 
+            <div class="radio">
+                <label><input type="radio" name="priority" value="Low"> Low</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="priority" value="Medium"> Medium</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="priority" value="High" checked> High</label>
+            </div>
+            <% } %> 
+      <% if (list.dateDue) { %> 
+      <h5 class="card-title">Date due: <%=list.dateDue.toString().slice(0,15) %> </h5>
+      <% } else { %> 
+        <h5 class="card-title">Date due: none set</h5>
+        <% } %> 
+      <input type="date" name="dateDue"> 
+      <br>
+      <br>
+    <input type="submit" class="btn btn-primary" value="Confirm changes">
+    <a class="btn btn-secondary" href="/<%=list.id%>" role="button">Cancel</a>
+    </div>
+  </div>
 </form>
+
 
 
 <%- include('partials/footer.ejs') %>

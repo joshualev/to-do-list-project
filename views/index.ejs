@@ -15,9 +15,12 @@
       <a label class="list-group-item rounded-3 py-3" href="/<%=lists[i].id%>" for="listGroupCheckableRadios<%=[i]%>">
         <%=lists[i].title%>
         <span class="d-block small opacity-50">
+          <%=lists[i].priority%> priority 
+          <br>
           <% if (lists[i].dateDue) { %> 
-          <%=lists[i].dateDue %> 
+          Due by <%=lists[i].dateDue.toString().slice(0,15) %> 
           <% } %> 
+      
         </span>
       </label>
     </a>

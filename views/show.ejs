@@ -8,7 +8,7 @@
         <% if (list.description) { %> 
         <h5 class="card-title"><%=list.description%></h5>
         <% } else { %> 
-            <p class="card-text">There is description set</p>
+            <p class="card-text">There is no description set</p>
             <% } %> 
         <% if(list.dateDue) { %> 
       <p class="card-text">Due by <%=list.dateDue.toString().slice(0,10) %> </p>

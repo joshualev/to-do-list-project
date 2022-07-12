@@ -10,14 +10,17 @@
           <h5 class="card-title">Task</h5>
           <input type="text" name="title" id="title" placeholder="task">
           <h5 class="card-title">Description</h5>
-          <input type="text" name="description" id="description" placeholder="description">
+          <textarea class="form-control" rows="5" id="comment"></textarea>
           <h5 class="card-title">Priority</h5>
-          <select class="form-select" aria-label="Priority select">
-            <option selected>Medium</option>
-            <option value="1">Low</option>
-            <option value="2">Medium</option>
-            <option value="3">High</option>
-          </select>
+          <div class="radio">
+            <label><input type="radio" name="priority" value="Low" checked> Low</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="priority" value="Medium"> Medium</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="priority" value="High"> High</label>
+          </div>
           <h5 class="card-title">Due date</h5>
           <input type="date" name="dateDue"> 
         <input type="submit" class="btn btn-primary" value="Create task">
