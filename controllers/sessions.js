@@ -20,7 +20,6 @@ sessionRouter.post('/login', (req,res) => {
     .then((user) => {
         if(!user) {
             // user not found
-            // success, info, error
             req.flash('error', 'Username or password is incorrect')
             return res.redirect(req.baseUrl + '/login')
         }

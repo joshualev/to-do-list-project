@@ -5,7 +5,6 @@ const User = require('../models/users')
 
 const userRouter = express.Router()
 
-//GET   /signup
 // localhost:3000/users/signup
 userRouter.get('/signup', (req,res) => {
     res.render('users/signup.ejs', {
@@ -14,9 +13,7 @@ userRouter.get('/signup', (req,res) => {
     })
 })
 
-
-//Create user AND
-//Overwrite users pw with hashed pw and pass to db
+//Create user AND overwrite users pw with hashed pw and pass to db
 userRouter.post('/', (req,res) => {
     req.body.password = bcrypt.hashSync(
         req.body.password,
@@ -25,13 +22,12 @@ User.create(req.body)
 .then((user) => {
     console.log('created user: ', user )
     res.redirect('/home')
+   
 })
-.catch((err) => {
+.catch(() => {
     req.flash('info', 'Username already exists')
     res.redirect(req.baseUrl + '/signup')
-    console.log("error: ", err)
     })
 })
-
 
 module.exports = userRouter

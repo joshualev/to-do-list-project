@@ -13,19 +13,9 @@ const isLoggedIn = (req,res,next) => {
 
 router.use(isLoggedIn)
 
-//GET   /
-// router.get('/', (req,res) => {
-//     List.find(req.body)
-//     .exec()
-//     .then((lists) => {
-//         res.render('index.ejs', {
-//             lists: lists
-//         })
-//     })
-//     .catch((err) => {
-//         console.log("error detected: ", err)
-//     })
-// })
+
+
+
 router.get('/', (req,res) => {
     List.find()
     .exec()
@@ -45,11 +35,7 @@ router.get('/', (req,res) => {
 
 
 
-// //GET   /new
-// router.get('/new', (req,res) => {
-//     List.find(req.body)
-//         res.render('new.ejs')
-// })
+
 router.get('/new', (req,res) => {
     res.render('new.ejs', {
         baseUrl: req.baseUrl,
@@ -58,17 +44,6 @@ router.get('/new', (req,res) => {
 })
 
 
-//POST    /
-// router.post('/', (req,res) => {
-//     List.create(req.body)
-//     .then((list) => {
-//         console.log(list)
-//         res.redirect('/')
-//     })
-//     .catch((err) => {
-//         console.log("error detected during post request to route '/':", err)
-//     })
-// })
 router.post('/', (req,res) => {
     if (req.body.status === 'on'){
         req.body.status = true
@@ -87,19 +62,6 @@ router.post('/', (req,res) => {
 
 
 
-//GET   /:id
-// router.get('/:id', (req,res) => {
-//     List.findById(req.params.id)
-//     .exec()
-//     .then((list) => {
-//         res.render('show.ejs', {
-//             list: list
-//         })
-//     })
-//     .catch((err) => {
-//         console.log("error detected", err)
-//     })
-// })
 router.get('/:id', (req,res) => {
     List.findById(req.params.id)
     .exec()
@@ -116,18 +78,7 @@ router.get('/:id', (req,res) => {
 })
 
 
-//DELETE
-// router.delete('/:id', (req,res) => {
-//     List.findOneAndDelete(req.params.id)
-//     .exec()
-//     .then((list) => {
-//         console.log('removed the list item: ', list)
-//         res.redirect('/')
-//     })
-//     .catch((err) => {
-//         console.log('error detected at ', err)
-//     })
-// })
+
 router.delete('/:id', (req,res) => {
     List.findOneAndDelete(req.params.id)
     .exec()

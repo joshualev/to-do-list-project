@@ -72,6 +72,7 @@ a:link {
 
 /* flash messages */
 .flash-messages p {
+  text-align: center;
   padding: 4px 8px;
   margin-bottom: 2px;
   border-radius: 4px;
@@ -88,4 +89,12 @@ a:link {
 .flash-messages .error {
   background: #f8d7da;
   color: #721c24;
+}
+.form-container {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
 }
