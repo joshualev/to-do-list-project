@@ -3,14 +3,36 @@ const router = express.Router()
 
 const List = require('../models/lists')
 
+//if user is logged in proceed, else redirect to login page
+const isLoggedIn = (req,res,next) => {
+    if(!req.session.currentUser) {
+        return res.redirect('/login')
+    }
+    next()
+}
+
+router.use(isLoggedIn)
 
 //GET   /
+// router.get('/', (req,res) => {
+//     List.find(req.body)
+//     .exec()
+//     .then((lists) => {
+//         res.render('index.ejs', {
+//             lists: lists
+//         })
+//     })
+//     .catch((err) => {
+//         console.log("error detected: ", err)
+//     })
+// })
 router.get('/', (req,res) => {
-    List.find(req.body)
+    List.find()
     .exec()
     .then((lists) => {
-        console.log(lists[3])
         res.render('index.ejs', {
+            currentUser: req.session.currentUser,
+            baseUrl: req.baseUrl,
             lists: lists
         })
     })
@@ -19,32 +41,73 @@ router.get('/', (req,res) => {
     })
 })
 
-//GET   /new
+
+
+
+
+// //GET   /new
+// router.get('/new', (req,res) => {
+//     List.find(req.body)
+//         res.render('new.ejs')
+// })
 router.get('/new', (req,res) => {
-    List.find(req.body)
-        res.render('new.ejs')
+    res.render('new.ejs', {
+        baseUrl: req.baseUrl,
+        currentUser: req.session.currentUser
+    })
 })
 
 
 //POST    /
+// router.post('/', (req,res) => {
+//     List.create(req.body)
+//     .then((list) => {
+//         console.log(list)
+//         res.redirect('/')
+//     })
+//     .catch((err) => {
+//         console.log("error detected during post request to route '/':", err)
+//     })
+// })
 router.post('/', (req,res) => {
+    if (req.body.status === 'on'){
+        req.body.status = true
+    } else {
+        req.body.status = false
+    }
     List.create(req.body)
     .then((list) => {
-        console.log(list)
-        res.redirect('/')
+        console.log('created list item: ', list)
+        res.redirect(req.baseUrl)
     })
     .catch((err) => {
         console.log("error detected during post request to route '/':", err)
     })
 })
 
+
+
 //GET   /:id
+// router.get('/:id', (req,res) => {
+//     List.findById(req.params.id)
+//     .exec()
+//     .then((list) => {
+//         res.render('show.ejs', {
+//             list: list
+//         })
+//     })
+//     .catch((err) => {
+//         console.log("error detected", err)
+//     })
+// })
 router.get('/:id', (req,res) => {
     List.findById(req.params.id)
     .exec()
     .then((list) => {
         res.render('show.ejs', {
-            list: list
+            baseUrl: req.baseUrl,
+            list: list,
+            currentUser: req.session.currentUser
         })
     })
     .catch((err) => {
@@ -52,19 +115,30 @@ router.get('/:id', (req,res) => {
     })
 })
 
+
 //DELETE
+// router.delete('/:id', (req,res) => {
+//     List.findOneAndDelete(req.params.id)
+//     .exec()
+//     .then((list) => {
+//         console.log('removed the list item: ', list)
+//         res.redirect('/')
+//     })
+//     .catch((err) => {
+//         console.log('error detected at ', err)
+//     })
+// })
 router.delete('/:id', (req,res) => {
     List.findOneAndDelete(req.params.id)
     .exec()
     .then((list) => {
         console.log('removed the list item: ', list)
-        res.redirect('/')
+        res.redirect(req.baseUrl)
     })
     .catch((err) => {
         console.log('error detected at ', err)
     })
 })
-
 
 //PUT   /:id
 router.put('/:id', (req,res) => {
@@ -75,9 +149,9 @@ router.put('/:id', (req,res) => {
     }
     List.findByIdAndUpdate(req.params.id, req.body, { new: true })
     .exec()
-    .then((updatedList) => {
-        console.log('list updated to: ', updatedList)
-        res.redirect('/')
+    .then((list) => {
+        console.log('list updated to: ', list)
+        res.redirect(req.baseUrl)
     })
     .catch((err) => {
         console.log("error detected", err)
@@ -91,6 +165,8 @@ router.get('/:id/edit', (req,res) => {
     .exec()
     .then((list) => {
         res.render('edit.ejs', {
+            currentUser: req.session.currentUser,
+            baseUrl: req.baseUrl,
             list: list
         })
     })

@@ -2,17 +2,17 @@
 
 
 <div class="list-group list-group-checkable d-grid gap-2 border-0 w-auto">
-    <a class="btn btn-primary" href="/new" role="button">Create a new task</a>
+    <a class="btn btn-primary" href="<%= baseUrl %>/new" role="button">Create a new task</a>
 
 <% for ( let i = 0; i < lists.length; i++ ) { %> 
   <% if (lists[i].status === false){%> 
-    <form action="/<%= lists[i].id %>?_method=DELETE" method="post">
+    <form action="<%= baseUrl %>/<%= lists[i].id %>?_method=DELETE" method="post">
       <input type="submit" class="btn btn-success" value="Complete">
-      <a class="btn btn-secondary" href="/<%=lists[i].id%>/edit" role="button">Edit</a>
+      <a class="btn btn-secondary" href="<%= baseUrl %>/<%=lists[i].id%>/edit" role="button">Edit</a>
     </form>
 
       <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios<%=[i]%>">
-      <a label class="list-group-item rounded-3 py-3" href="/<%=lists[i].id%>" for="listGroupCheckableRadios<%=[i]%>">
+      <a label class="list-group-item rounded-3 py-3" href="<%= baseUrl %>/<%=lists[i].id%>" for="listGroupCheckableRadios<%=[i]%>">
         <%=lists[i].title%>
         <span class="d-block small opacity-50">
           <%=lists[i].priority%> priority 

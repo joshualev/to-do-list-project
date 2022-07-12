@@ -4,7 +4,7 @@
     <div class="card-header">
         <h3 class="card-title"><%=list.title%></h3>
     </div>
-    <div class="card-body">
+    <div class="card-body"''>
         <% if (list.description) { %> 
         <h5 class="card-title"><%=list.description%></h5>
         <% } else { %> 
@@ -18,9 +18,9 @@
     <p class="card-text"><%=list.priority.charAt(0).toUpperCase() + list.priority.slice(1)%> priority</p>
 
 
-      <form action="/<%= list.id %>?_method=DELETE" method="post">
+      <form action="<%= baseUrl %>/<%= list.id %>?_method=DELETE" method="post">
         <input type="submit" class="btn btn-success" value="Complete">
-      <a class="btn btn-secondary" href="/<%=list.id%>/edit" role="button">Make changes</a>
+      <a class="btn btn-secondary" href="<%= baseUrl %>/<%=list.id%>/edit" role="button">Make changes</a>
       </form>
     </div>
   </div>

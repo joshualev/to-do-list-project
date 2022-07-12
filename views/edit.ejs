@@ -1,6 +1,6 @@
 <%- include('partials/header.ejs') %>
 
-<form action="/<%=list.id%>?_method=put" method="post"> 
+<form action="<%= baseUrl %>/<%=list.id%>?_method=put" method="post"> 
 <div class="card">
     <div class="card-header">
      <h1>Update task </h1> 
@@ -55,7 +55,7 @@
       <br>
       <br>
     <input type="submit" class="btn btn-primary" value="Confirm changes">
-    <a class="btn btn-secondary" href="/<%=list.id%>" role="button">Cancel</a>
+    <a class="btn btn-secondary" href="<%= baseUrl %>/<%=list.id%>" role="button">Cancel</a>
     </div>
   </div>
 </form>
