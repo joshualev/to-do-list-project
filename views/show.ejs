@@ -1,28 +1,29 @@
 <%- include('partials/header.ejs') %>
 
-
-<h1>Show page</h1>
-
-<a href="/">Homepage</a>
-
-<label>Title</label>
-<p><%= list.title %> </p>
-
-<label>Description</label>
-<p><%= list.description %> </p>
-
-<label>Priority</label>
-<p><%= list.priority %> </p>
-
-
-<label>Status</label>
-<p><%= list.status %> </p>
-
-
-<label>Date Due</label>
-<p><%= list.dateDue %> </p>
+  <div class="card">
+    <div class="card-header">
+        <h3 class="card-title"><%=list.title%></h3>
+    </div>
+    <div class="card-body">
+        <% if (list.description) { %> 
+        <h5 class="card-title"><%=list.description%></h5>
+        <% } else { %> 
+            <p class="card-text">There is description set</p>
+            <% } %> 
+        <% if(list.dateDue) { %> 
+      <p class="card-text">Due by <%=list.dateDue.toString().slice(0,10) %> </p>
+      <% } else { %> 
+    <p class="card-text">There is no due date set</p>
+    <% } %> 
+    <p class="card-text"><%=list.priority.charAt(0).toUpperCase() + list.priority.slice(1)%> priority</p>
 
 
-<a href="/<%=list.id%>/edit ">Make Changes</a>
+      <form action="/<%= list.id %>?_method=DELETE" method="post">
+        <input type="submit" class="btn btn-success" value="Complete">
+      <a class="btn btn-secondary" href="/<%=list.id%>/edit" role="button">Make changes</a>
+      </form>
+    </div>
+  </div>
+
 
 <%- include('partials/footer.ejs') %>

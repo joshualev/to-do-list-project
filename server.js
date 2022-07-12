@@ -2,8 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 
-const listRouter = require('./controllers/lists')
-
+const router = require('./controllers/lists')
 const PORT = 3000
 const dbURL = "mongodb://localhost:27017/list" 
 
@@ -14,7 +13,7 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'))
 
 //set '/' as default on listRouter
-app.use('/', listRouter)
+app.use('/', router)
 
 //connect to MongoDb 'list'
 mongoose.connect(dbURL, () => {
