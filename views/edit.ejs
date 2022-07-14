@@ -7,10 +7,10 @@
     </div>
     <div class="card-body">
       <h5 class="card-title">Title</h5>
-      <input type="text" required name="title" id="title" placeholder="<%=list.title %>">
+      <input type="text" required name="title" id="title" value="<%=list.title%>">
       <h5 class="card-title">Description</h5>
       <% if (list.description) { %> 
-        <textarea class="form-control" name="description" id="description" rows="3" id="comment" placeholder="<%=list.description %> "></textarea>
+        <textarea class="form-control" name="description" id="description" rows="3" id="comment"><%=list.description%></textarea>
         <% } else { %> 
             <textarea class="form-control" name="description" id="description" rows="3" id="comment" placeholder="There is no description set"></textarea>
             <% } %> 
@@ -48,13 +48,19 @@
             <% } %> 
       <% if (list.dateDue) { %> 
       <h5 class="card-title">Date due: <%=list.dateDue.toString().slice(0,15) %> </h5>
-      <input type="date" required name="dateDue"> 
+      <!-- <input type="date" required name="dateDue">  -->
+      <input type="date" value="<%=list.dateDue.toString().slice(0,15) %>" placeholder="<%=list.dateDue.toString().slice(0,15) %>"
+ 
       <% } else { %> 
         <h5 class="card-title">Date due: none set</h5>
-        <input type="date" required name="dateDue"> 
+        <label for="dateDue">Due by</label>
+        <input id="dateDue" class="form-control" name="dateDue" type="date" required />
         <% } %> 
       <br>
       <br>
+
+  
+
     <input type="submit" class="btn btn-primary" value="Confirm changes">
     <a class="btn btn-secondary" href="<%= baseUrl %>/<%=list.id%>" role="button">Cancel</a>
     </div>

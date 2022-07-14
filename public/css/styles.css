@@ -90,11 +90,10 @@ a:link {
   background: #f8d7da;
   color: #721c24;
 }
-.form-container {
-  max-width: 320px;
-  margin: 0 auto;
+
+
+
+.formWithButtons {
+  display: inline;
 }
 
-form label {
-  display: block;
-}

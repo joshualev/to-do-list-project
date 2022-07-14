@@ -8,6 +8,7 @@ const sessionRouter = express.Router()
 
 // localhost:3000/login
 sessionRouter.get('/login', (req,res) => {
+    console.log(req.session.currentUser)
     res.render('sessions/login.ejs', {
         baseUrl: req.baseUrl,
         currentUser: req.session.currentUser
@@ -30,6 +31,7 @@ sessionRouter.post('/login', (req,res) => {
             res.redirect(req.baseUrl + '/login')
         } else {
             //user found and password is correct!
+            console.log(user, 'logged in')
             req.session.currentUser = user
             res.redirect('/home')
         }
@@ -39,7 +41,7 @@ sessionRouter.post('/login', (req,res) => {
 // localhost:3000/logout
 sessionRouter.delete('/logout', (req,res) => {
     req.session.destroy(() => {
-        res.redirect('/home')
+        res.redirect('/login')
     })
 })
 

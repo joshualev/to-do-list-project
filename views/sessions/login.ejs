@@ -4,22 +4,23 @@
 <div class="form-container">
     <h1>Login</h1>
     <div class="flash-messages">
-        <% if (messages.success) { %>
-          <% for (let msg of messages.success) { %>
-            <p class="success"><%= msg %></p>
-          <% } %>
+      <% if (messages.success) { %>
+        <% for (let msg of messages.success) { %>
+          <p class="success"><%= msg %></p>
         <% } %>
-        <% if (messages.info) { %>
-          <% for (let msg of messages.info) { %>
-            <p class="info"><%= msg %></p>
-          <% } %>
+      <% } %>
+      <% if (messages.info) { %>
+        <% for (let msg of messages.info) { %>
+          <p class="info"><%= msg %></p>
         <% } %>
-        <% if (messages.error) { %>
-          <% for (let msg of messages.error) { %>
-            <p class="error"><%= msg %></p>
-          <% } %>
+      <% } %>
+      <% if (messages.error) { %>
+        <% for (let msg of messages.error) { %>
+          <p class="error"><%= msg %></p>
         <% } %>
-      </div>
+      <% } %>
+    </div>
+  
 
 <form action="<%= baseUrl %>/login" method="post">
 <p>
@@ -31,8 +32,6 @@
   <input type="password" name="password" id="password" required />
 </p>
   <input class="button button-primary" type="submit" value="Login" />
-
-
 <p>
     Don't have an account yet?
     <a href="/user/signup">Sign up here</a>

@@ -21,9 +21,26 @@
           <div class="radio">
             <label><input type="radio" name="priority" value="High"> High</label>
           </div>
-          <h5 class="card-title">Due date</h5>
-          <input type="date" name="dateDue"> 
-        <input type="submit" class="btn btn-primary" value="Create task">
+          <h5 class="card-title">Category</h5>
+          <div class="radio">
+            <label><input type="radio" name="category" value="Home" checked> Personal</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="category" value="Social"> Social</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="category" value="Work"> Work</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="category" value="Education"> Education</label>
+          </div>
+          <div>
+          <label for="dateDue">Due by</label>
+          <input id="dateDue" class="form-control" name="dateDue" type="date" />
+        </div>
+  <form action="<%=baseUrl%>/new?_method=create" method="create" >
+    <input type="submit" class="btn btn-primary" value="Add task">
+  </form>
         </div>
       </div>
     </form>

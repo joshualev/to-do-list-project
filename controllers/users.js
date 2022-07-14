@@ -8,8 +8,8 @@ const userRouter = express.Router()
 // localhost:3000/users/signup
 userRouter.get('/signup', (req,res) => {
     res.render('users/signup.ejs', {
+        currentUser: req.session.currentUser,
         baseUrl: req.baseUrl,
-        currentUser: req.session.currentUser
     })
 })
 
