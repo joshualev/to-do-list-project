@@ -1,9 +1,11 @@
 
 <%- include('../partials/header.ejs') %>
 
+<%let groupComplete = 0 %> 
 <div class="list-group list-group-checkable d-grid gap-2 border-0 w-auto">
   <% for (let i = 0; i < list.length; i++) { %> 
     <% if (list[i].status === true) { %> 
+     <% groupComplete ++ %>  
       <div class="complete-tasks">
             <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios<%=[i]%>">
             <a label class="list-group-item rounded-3 py-3" href="<%= baseUrl %>/<%=list[i].id%>" for="listGroupCheckableRadios<%=[i]%>">
@@ -31,5 +33,5 @@
   <% } %> 
 <% } %> 
 </div>
-
+<% if (groupComplete === 0 ) { %> <h1> There are currently no completed tasks </h1> <% } %> 
 <%- include('../partials/footer.ejs') %>

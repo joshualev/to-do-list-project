@@ -1,9 +1,11 @@
 
 <%- include('../partials/header.ejs') %>
-
+<% let groupOther = 0 %> 
 <div class="todo-tasks list-group list-group-checkable d-grid gap-2 border-0 w-auto">
-<% for (let i = 0; i < list.length; i++) { %> 
+  <% let groupOther =0 %>
+  <% for (let i = 0; i < list.length; i++) { %> 
     <% if (list[i].category === "Other" && list[i].status === false) { %> 
+      <% groupOther ++ %> 
         <form action="<%= baseUrl %>/<%= list[i].id %>?_method=delete" method="post">
             <input type="submit" class="btn btn-success" value="Complete">
             <a class="btn btn-secondary" href="<%= baseUrl %>/<%=list[i].id%>/edit" role="button">Edit</a>
@@ -43,6 +45,7 @@
   
       <% } %> 
   <% } %> 
+  
   </div>
-
+  <% if (groupOther === 0 ) { %> <h1> There are no list items of this category </h1> <% } %> 
 <%- include('../partials/footer.ejs') %>
