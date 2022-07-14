@@ -1,49 +1,102 @@
 * {
   font-family: 'Roboto', sans-serif;
 }
-
+body{
+  background-color: #eefcff;
+}
 a:link {
     text-decoration: none;
   }
+
+#change-list input[type=submit],
+#change-list a {
+  transition: 300ms;
+  background-color: #eefcff;
+  border-color: #135ea0;
+  color: black;
+}
+
+#change-list input[type=submit]:hover,
+#change-list a:hover {
+  transition: 300ms;
+  background-color: #b1d4df;
+    border-color: #135ea0;
+    color: black;
+}
+
+
+#add-task {
+  transition: 300ms;
+  background-color: #135ea0;
+  border-color: #b1d4df;
+  color: white;
+  width: 20em;
+  margin: auto;
+  margin-top: 1em;
+  } 
+
+  #add-task:hover {
+    transition: 300ms;
+    background-color: #b1d4df;
+    border-color: #b1d4df;
+    color: white;
+    width: 20em;
+    margin: auto;
+    margin-top: 1em;
+  } 
+
   .collapsed > .when-open,
   .not-collapsed > .when-closed {
     display: none;
   }
 
-.card {
-
-    border-color: #12343b;
-  }
-
-.complete-tasks a {
-background-color: #eaffde;
-transition: 300ms;
-  }
-
-  .complete-tasks a:hover {
-    background-color: #aedfb4;
-    color: #12343b;
+  .complete-tasks a,
+  .complete-tasks button,
+  .complete-tasks input[type=submit] { 
     transition: 300ms;
-      }
-#add-task {
-  margin-top: 2em;
-  width: 10em;
-  margin: 2em auto;
-  background-color: #ffaaab;
-  border-color:  #ffaaab;
-  transition: 600ms;
+    background-color: #aedfb4;
+    border-color: #aedfb4;
+    color: black;
+  }
+  .complete-tasks a:hover,
+  .complete-tasks button:hover,
+  .complete-tasks input[type=submit]:hover {
+    background-color: #90ee90;
+    border-color: #90ee90;
+    color: black;
+    transition: 300ms;
+  }
+
+.todo-tasks a,
+.todo-tasks button,
+.todo-tasks input[type=submit] {
+  background-color: #135ea0;
+  border-color: #b1d4df;
+  color: white;
+  transition: 300ms;
 }
-#add-task:hover {
-transition: 600ms;
-color: BLACK;
-background-color: #ff5e6c;
-border-color:  #ff5e6c;
+
+.todo-tasks a:hover,
+.todo-tasks button:hover,
+.todo-tasks input[type=submit]:hover {
+  background-color: #b1d4df;
+  border-color: #b1d4df;
+  color: white;
+  transition: 300ms;
 }
+
 
 #change-list {
   margin-top: 2em;
+  background-color: #135ea0;
+  border-color: #b1d4df;
+  color: white;
 }
-
+.description-header {
+  background-color: #135ea0;
+  border-color: #b1d4df;
+  color: white;
+}
 #register-page,
 #login-page {
   margin-top: 5em;
@@ -68,7 +121,10 @@ border-color:  #ff5e6c;
   margin: 0 auto;
 }
 
-
+nav li:hover {
+  transition: 100ms;
+  background-color: #e3f2fd;
+}
 /* Display Lists */
 .list-group {
     max-width: 500px;
