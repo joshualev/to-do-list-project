@@ -19,17 +19,6 @@
     </div>
 
 
-    <div class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Sort by
-      </a>
-  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <li><a class="dropdown-item">Priority</a></li>
-    <li><a class="dropdown-item">Due date</a></li>
-    <li><a class="dropdown-item">Date created</a></li>
-  </ul>
-</div>
-
 <% for (let i = 0; i < list.length; i++) { %> 
     <% if (list[i].category === "Education" && list[i].status === false) { %> 
         <form action="<%= baseUrl %>/<%= list[i].id %>?_method=delete" method="post">
