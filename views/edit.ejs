@@ -21,16 +21,13 @@
 
     <!-- Date due -->
     <div class="form-outline mb-4">
-        <div class="date-select">
-        <% if (list.dateDue) { %>        
+        <div class="date-select">      
         <!-- <input type="date" required name="dateDue">  -->
-        <label class="form-label" for="form6Example9">Due date</label>
-        <input type="date" id="form6Example9" class="form-control value=" %>" />    
-            <% } else { %> 
-            <label for="dateDue">Due by</label>
-            <input id="dateDue" class="form-control" name="dateDue" type="date" required />
-            <% } %> 
-            <br>
+        <div class="col form-outline mb-4">
+            <label class="form-label" for="dateDue">Due by</label>
+            <input id="dateDue" class="form-control" name="dateDue" type="date" value="<%=list.dateDue.toISOString().slice(0,10)%>"
+            min="<%=list.dateDue.toISOString().slice(0,10)%>">
+        </div>
         </div>
     </div>
         </div>

@@ -15,6 +15,16 @@ a:link {
     border-color: #12343b;
   }
 
+.complete-tasks a {
+background-color: #eaffde;
+transition: 300ms;
+  }
+
+  .complete-tasks a:hover {
+    background-color: #aedfb4;
+    color: #12343b;
+    transition: 300ms;
+      }
 #add-task {
   margin-top: 2em;
   width: 10em;
