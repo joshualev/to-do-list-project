@@ -1,3 +1,6 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
 
 a:link {
     text-decoration: none;
@@ -7,10 +10,24 @@ a:link {
     display: none;
   }
 
+.card {
+
+    border-color: #12343b;
+  }
+
 #add-task {
   margin-top: 2em;
   width: 10em;
   margin: 2em auto;
+  background-color: #ffaaab;
+  border-color:  #ffaaab;
+  transition: 600ms;
+}
+#add-task:hover {
+transition: 600ms;
+color: BLACK;
+background-color: #ff5e6c;
+border-color:  #ff5e6c;
 }
 
 #change-list {

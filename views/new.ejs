@@ -8,7 +8,7 @@
 
     <form action="<%= baseUrl %>" method="post"> 
     <!-- Task title-->
-    <div class="row mb-4">
+    <div class="due-title row mb-4">
         <div class="col">
         <div class="form-outline">
             <label class="form-label" for="title">Title</label>
@@ -16,13 +16,10 @@
         </div>
         </div>
     <div class="col">
-
     <!-- Date due -->
-    <div class="form-outline mb-4">
-        <div class="date-select">
-            <label for="dateDue">Due by</label>
+    <div class="col form-outline mb-4">
+            <label class="form-label" for="dateDue">Due by</label>
             <input id="dateDue" class="form-control" name="dateDue" type="date" required />
-        </div>
     </div>
         </div>
     </div>

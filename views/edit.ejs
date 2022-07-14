@@ -25,7 +25,7 @@
         <% if (list.dateDue) { %>        
         <!-- <input type="date" required name="dateDue">  -->
         <label class="form-label" for="form6Example9">Due date</label>
-        <input type="date" id="form6Example9" class="form-control value=" value="<%=list.dateDue.toString().slice(0,15)%>" placeholder="<%=list.dateDue.toString().slice(0,15) %>" />    
+        <input type="date" id="form6Example9" class="form-control value=" %>" />    
             <% } else { %> 
             <label for="dateDue">Due by</label>
             <input id="dateDue" class="form-control" name="dateDue" type="date" required />
@@ -113,11 +113,9 @@
 
     <div class="confirm-change-btns mt-5 row" style="max-width: 18rem;">
     <!-- Submit button -->
-    <button type="submit" value="Confirm changes" class=" btn btn-primary btn-block mb-4">Confirm changes</button>
-    <a class="btn btn-secondary btn btn-primary btn-block mb-4" href="<%= baseUrl %>/<%=list.id%>" role="button">Cancel</a>
+    <button type="submit" value="Confirm changes" class="btn btn-outline-primary btn-block mb-4">Confirm changes</button>
+    <a class="btn btn-outline-secondary btn-block mb-4" href="<%= baseUrl %>/<%=list.id%>" role="button">Cancel</a>
     </div>
 </form>
-
-
 
 <%- include('partials/footer.ejs') %>
