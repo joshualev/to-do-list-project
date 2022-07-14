@@ -45,6 +45,11 @@ a:link {
     margin-top: 1em;
   } 
 
+  .no-items-category{
+    display: flex;
+    justify-content: center;
+  }
+
   .collapsed > .when-open,
   .not-collapsed > .when-closed {
     display: none;

@@ -4,7 +4,7 @@
 <div class="form-container">
 
 
-<form action="<%= baseUrl %>" method="post">
+<form action="<%= baseUrl %>" method="post" autocomplete="off">
 <section id="register-page" class="w-100 p-4 d-flex justify-content-center pb-4">
   <div style="width: 26rem;">
     <!-- Pills navs -->
@@ -24,7 +24,7 @@
         <form>
           <div class="text-center mb-3">
 
-          <!-- Email input -->
+          <!-- User input -->
           <div class="form-outline mb-4">
             <input type="text" name="username" id="username" class="form-control active" required>
             <label class="form-label" for="username" style="margin-left: 0px;">Username</label>
@@ -45,23 +45,23 @@
   </section>
 </form>
 
-<div class="flash-messages">
-  <% if (messages.success) { %>
-    <% for (let msg of messages.success) { %>
-      <p class="success"><%= msg %></p>
-    <% } %>
-  <% } %>
-  <% if (messages.info) { %>
-    <% for (let msg of messages.info) { %>
-      <p class="info"><%= msg %></p>
-    <% } %>
-  <% } %>
-  <% if (messages.error) { %>
-    <% for (let msg of messages.error) { %>
-      <p class="error"><%= msg %></p>
-    <% } %>
-  <% } %>
-  </div>    
- 
+    <div class="flash-messages">
+      <% if (messages.success) { %>
+        <% for (let msg of messages.success) { %>
+          <p class="success"><%= msg %></p>
+        <% } %>
+      <% } %>
+      <% if (messages.info) { %>
+        <% for (let msg of messages.info) { %>
+          <p class="info"><%= msg %></p>
+        <% } %>
+      <% } %>
+      <% if (messages.error) { %>
+        <% for (let msg of messages.error) { %>
+          <p class="error"><%= msg %></p>
+        <% } %>
+      <% } %>
+      </div>    
+     
 </div>
 <%- include('../partials/footer.ejs') %>
