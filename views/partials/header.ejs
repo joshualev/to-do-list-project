@@ -9,12 +9,21 @@
 </head>
 
   <body>
-    
+  
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/home">Your To Do List</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <% if (currentUser) {%>
+        <a class="navbar-brand" href="/home"><%=currentUser.username%>'s To Do List</a>
+        <% } else { %> 
+          <a class="navbar-brand" href="/home">To Do List</a>
+          <% } %> 
+        <button class="navbar-toggler" type="button" 
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" 
+          aria-controls="navbarSupportedContent" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -33,21 +42,17 @@
                   <li><a class="dropdown-item" href="/home/education">Education</a></li>
                   <li><a class="dropdown-item" href="/home/completed">Completed</a></li>
               </ul>
-            </div>
-            <p class="navbar-text">Signed in as <%=currentUser.username%> </p>
+            </div>     
           </ul>
-          
               <form action="/logout?_method=delete" method="post">
-                <input type="button" class="nav-item" value="Sign out">
+                <input type="submit" class="nav-item" value="Sign out">
               </form>
               <% } else { %>
-                  <li class="nav-item"><a href="/login" class="nav-link active" aria-current="page">Login</a></li>
-                  <li class="nav-item"><a href="user/signup" class="nav-link">Sign up</a></li>
+                  <!-- <li class="nav-item"><a href="/about" class="nav-link active" aria-current="page">What do we do?</a></li> -->
               <% } %>
           </ul>
-
         </div>
       </div>
     </nav>
-
-
+    <div class="container">
+    

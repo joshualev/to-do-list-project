@@ -207,6 +207,7 @@ router.get('/:id/edit', (req,res) => {
     List.findById(req.params.id)
     .exec()
     .then((list) => {
+        console.log(list.category)
         res.render('edit.ejs', {
             currentUser: req.session.currentUser,
             baseUrl: req.baseUrl,

@@ -2,23 +2,6 @@
 <%- include('../partials/header.ejs') %>
 
 <div class="list-group list-group-checkable d-grid gap-2 border-0 w-auto">
-    <a class="btn btn-primary" href="<%= baseUrl %>/new" role="button">Create a new task</a>
-
-
-    <div class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Filter by category
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="/home/personal">Personal</a></li>
-        <li><a class="dropdown-item" href="/home/social">Social</a></li>
-        <li><a class="dropdown-item" href="/home/work">Work</a></li>
-        <li><a class="dropdown-item" href="/home/education">Education</a></li>
-        <li><a class="dropdown-item" href="/home/completed">Completed</a></li>
-      </ul>
-    </div>
-
-
 <% for (let i = 0; i < list.length; i++) { %> 
     <% if (list[i].category === "Education" && list[i].status === false) { %> 
         <form action="<%= baseUrl %>/<%= list[i].id %>?_method=delete" method="post">
@@ -36,12 +19,11 @@
                 <% if (list[i].dateDue) { %> 
                 Due by <%=list[i].dateDue.toString().slice(0,15) %> 
                 <% } %> 
-            
               </span>
             </label>
           </a>
     <% } %> 
 <% } %> 
-
 </div>
+
 <%- include('../partials/footer.ejs') %>

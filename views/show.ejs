@@ -1,8 +1,12 @@
 <%- include('partials/header.ejs') %>
 
-  <div class="card">
+  <div id="change-list" class="card">
     <div class="card-header">
-        <h3 class="card-title"><%=list.title%></h3>
+      <div>
+        <h3 class="card-title"><%=list.title%>
+          <h6><%=list.category%> </h6>
+        </h3>
+      </div>
     </div>
     <div class="card-body"''>
         <% if (list.description) { %> 

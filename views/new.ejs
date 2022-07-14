@@ -1,48 +1,90 @@
 <%- include('partials/header.ejs') %>
 
-<form action="<%= baseUrl %>" method="post"> 
-
-    <div class="card">
+    <div id="change-list" class="card update-task-card">
         <div class="card-header">
-          Create Task
+        <h1 class="update-task-h1">Add a to do </h1> 
         </div>
-        <div class="card-body">
-          <h5 class="card-title">Task</h5>
-          <input type="text" required name="title" id="title" placeholder="Task name">
-          <h5 class="card-title">Description</h5>
-          <textarea class="form-control" name="description" id="description" rows="3" id="comment" placeholder="Description"></textarea>
-          <h5 class="card-title">Priority</h5>
-          <div class="radio">
-            <label><input type="radio" name="priority" value="Low" checked> Low</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" name="priority" value="Medium"> Medium</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" name="priority" value="High"> High</label>
-          </div>
+    </div>
+
+    <form action="<%= baseUrl %>" method="post"> 
+    <!-- Task title-->
+    <div class="row mb-4">
+        <div class="col">
+        <div class="form-outline">
+            <label class="form-label" for="title">Title</label>
+            <input type="text" required name="title" id="title" placeholder="Task name" class="form-control" />
+        </div>
+        </div>
+    <div class="col">
+
+    <!-- Date due -->
+    <div class="form-outline mb-4">
+        <div class="date-select">
+            <label for="dateDue">Due by</label>
+            <input id="dateDue" class="form-control" name="dateDue" type="date" required />
+        </div>
+    </div>
+        </div>
+    </div>
+
+    <!-- Description -->
+    <div class="card border-light ">
+        <div class="card-header">Description</div>
+        <div class="card-body"> 
+        <div class="form-outline mb-6">
+            <textarea class="form-control" placeholder="Description" name="description" id="description" rows="5" id="description"></textarea>
+        </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-3 gap-2">
+      <div class="card col-xs-6" style="width: 18rem;">
+          <div class="card-body">
           <h5 class="card-title">Category</h5>
           <div class="radio">
-            <label><input type="radio" name="category" value="Home" checked> Personal</label>
+              <label><input type="radio" name="category" value="Personal" checked> Personal</label>
           </div>
           <div class="radio">
-            <label><input type="radio" name="category" value="Social"> Social</label>
+              <label><input type="radio" name="category" value="Social"> Social</label>
           </div>
           <div class="radio">
-            <label><input type="radio" name="category" value="Work"> Work</label>
+              <label><input type="radio" name="category" value="Work"> Work</label>
           </div>
           <div class="radio">
-            <label><input type="radio" name="category" value="Education"> Education</label>
+              <label><input type="radio" name="category" value="Education"> Education</label>
           </div>
-          <div>
-          <label for="dateDue">Due by</label>
-          <input id="dateDue" class="form-control" name="dateDue" type="date" />
-        </div>
-  <form action="<%=baseUrl%>/new?_method=create" method="create" >
-    <input type="submit" class="btn btn-primary" value="Add task">
-  </form>
-        </div>
+          </div>
       </div>
-    </form>
+      <div class="card col-xs-6" style="width: 18rem;">
+          <div class="card-body">
+          <h5 class="card-title">Priority</h5>
+          <div class="priority-select">
+              <div class="radio">
+                  <label><input type="radio" name="priority" value="Low" checked> Low</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="priority" value="Medium"> Medium</label>
+                  </div>
+                  <div class="radio">
+                      <label><input type="radio" name="priority" value="High"> High</label>
+                  </div>               
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="confirm-change-btns mt-5 row" style="max-width: 18rem;">
+    <!-- Submit button -->
+    <form action="<%=baseUrl%>/new?_method=create" method="create" >
+  
+
+    <button type="submit" value="Add task" class=" btn btn-primary btn-block mb-4">Add task</button>
+    <a class="btn btn-secondary btn btn-primary btn-block mb-4" href="<%= baseUrl %>" role="button">Cancel</a>
+    </div>
+  </form>
+</form>
+
+</div>
+
 
 <%- include('partials/footer.ejs') %>

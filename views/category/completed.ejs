@@ -2,25 +2,10 @@
 <%- include('../partials/header.ejs') %>
 
 <div class="list-group list-group-checkable d-grid gap-2 border-0 w-auto">
-
-    <div class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Filter by category
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="/home/personal">Personal</a></li>
-        <li><a class="dropdown-item" href="/home/social">Social</a></li>
-        <li><a class="dropdown-item" href="/home/work">Work</a></li>
-        <li><a class="dropdown-item" href="/home/education">Education</a></li>
-        <li><a class="dropdown-item" href="/home/completed">Completed</a></li>
-      </ul>
-    </div>
-
-
-<% for (let i = 0; i < list.length; i++) { %> 
+  <% for (let i = 0; i < list.length; i++) { %> 
     <% if (list[i].status === true) { %> 
             <form action="<%= baseUrl %>/<%= list[i].id %>?_method=delete" method="post">
-              <input type="submit" class="btn btn-danger" value="Delete">
+              <input type="submit" class="btn btn-danger" value="Remove">
             </form>
             <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios<%=[i]%>">
             <a label class="list-group-item rounded-3 py-3" href="<%= baseUrl %>/<%=list[i].id%>" for="listGroupCheckableRadios<%=[i]%>">
@@ -39,4 +24,5 @@
   <% } %> 
 <% } %> 
 </div>
+
 <%- include('../partials/footer.ejs') %>

@@ -7,7 +7,42 @@ a:link {
     display: none;
   }
 
-/* to do list buttons */
+#add-task {
+  margin-top: 2em;
+  width: 10em;
+  margin: 2em auto;
+}
+
+#change-list {
+  margin-top: 2em;
+}
+
+#register-page,
+#login-page {
+  margin-top: 5em;
+}
+#edit-symbol {
+  margin-left: 0.3em;
+  margin-bottom: 0.2em;
+}
+#edit-symbol:hover {
+  fill: #198752;
+  transition: 300ms;
+  transform: scaleX(1.2) scaleY(1.2)
+}
+.update-task-h1 {
+  text-align: center;
+}
+.update-task-card{
+  margin-bottom: 2em;
+}
+.confirm-change-btns {
+  justify-content: center;
+  margin: 0 auto;
+}
+
+
+/* Display Lists */
 .list-group {
     max-width: 500px;
     margin: 4rem auto;
@@ -69,31 +104,40 @@ a:link {
     filter: none;
     opacity: .5;
   }
+  .formWithButtons {
+    display: inline;
+  }
+/* ----------------- */
+
 
 /* flash messages */
 .flash-messages p {
+  margin: 0 auto;
   text-align: center;
-  padding: 4px 8px;
-  margin-bottom: 2px;
-  border-radius: 4px;
+  padding: 1em;
+  width: 20em;
+  border-radius: 8px;
+  opacity: 0.6;
 }
 
 .flash-messages .success {
-  background: #d4edda;
-  color: #155724;
+  background: #198752;
+  color: white;
+  text-shadow: 1px 1px #CFE6DB;
+  box-shadow: 0.2px 0.2px #CFE6DB;
 }
 .flash-messages .info {
-  background: #fff3cd;
-  color: #856404;
+  background:#FAC10A ;
+  color:  white;
+  text-shadow: 1px 1px #997402;
+  box-shadow: 0.2px 0.2px #997402;
+
 }
 .flash-messages .error {
-  background: #f8d7da;
-  color: #721c24;
+  background: #DC3545;
+  color: white;
+  text-shadow: 1px 1px #DC4150;
+  box-shadow: 0.2px 0.2px #DC4150;
 }
-
-
-
-.formWithButtons {
-  display: inline;
-}
+/* ------------------ */
 
