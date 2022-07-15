@@ -16,9 +16,9 @@
     <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;"> 
       <div class="container-fluid">
         <% if (currentUser) {%>
-        <a class="navbar-brand" href="/home"><%=currentUser.username%>'s To Do List</a>
+        <a class="navbar-brand" href="/list"><%=currentUser.username%>'s To Do List</a>
         <% } else { %> 
-          <a class="navbar-brand" href="/home">To Do List</a>
+          <a class="navbar-brand" href="/list">To Do List</a>
           <% } %> 
           <% if (currentUser) {%>
         <button class="navbar-toggler" type="button" 
@@ -35,23 +35,23 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <% if (currentUser) {%>
               <li class="nav-item">
-                <a href="/home" class="nav-link active" aria-current="page">Home</a>
+                <a href="/list" class="nav-link active" aria-current="page">Home</a>
               </li>
               <li class="nav-item">
-                <a href="/home/new" class="nav-link" aria-current="page">Add task</a>
+                <a href="/list/new" class="nav-link" aria-current="page">Add task</a>
               </li>
               <li class="nav-item">
-                <a href="/home/completed" class="nav-link" aria-current="page">Completed</a>
+                <a href="/list/completed" class="nav-link" aria-current="page">Completed</a>
               </li>
             <div class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Filter by category
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/home/personal">Personal</a></li>
-                  <li><a class="dropdown-item" href="/home/social">Social</a></li>
-                  <li><a class="dropdown-item" href="/home/work">Work</a></li>
-                  <li><a class="dropdown-item" href="/home/education">Education</a></li>
+                  <li><a class="dropdown-item" href="/list/personal">Personal</a></li>
+                  <li><a class="dropdown-item" href="/list/social">Social</a></li>
+                  <li><a class="dropdown-item" href="/list/work">Work</a></li>
+                  <li><a class="dropdown-item" href="/list/education">Education</a></li>
               </ul>
             </div>     
           </ul>

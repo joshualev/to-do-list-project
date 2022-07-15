@@ -21,7 +21,7 @@ userRouter.post('/', (req,res) => {
 User.create(req.body)
 .then((user) => {
     console.log('created user: ', user )
-    res.redirect('/home')
+    res.redirect('/list')
    
 })
 .catch(() => {

@@ -38,7 +38,7 @@ app.use(methodOverride('_method'))
 
 app.use('/', sessionController)     //localhost:3000/
 app.use('/user', userController)    //localhost:3000/user
-app.use('/home', listController)     //localhost:3000/home
+app.use('/list', listController)     //localhost:3000/home
 
 
 //connect to MongoDb 'list'

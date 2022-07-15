@@ -34,7 +34,7 @@ router.get('/', (req,res) => {
 
 //GET   /categories
 router.get('/completed', (req,res) => {
-    List.find()
+        List.find()
     .then((list) => {
         console.log(list)
         res.render('category/completed.ejs', {

@@ -33,7 +33,7 @@ sessionRouter.post('/login', (req,res) => {
             //user found and password is correct!
             console.log(user, 'logged in')
             req.session.currentUser = user
-            res.redirect('/home')
+            res.redirect('/list')
         }
     })
 })
