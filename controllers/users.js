@@ -16,7 +16,7 @@ userRouter.get('/signup', (req,res) => {
 
 
 //POST  /
-userRouter.post('/login', (req,res) => {
+userRouter.post('/', (req,res) => {
     //Create user AND overwrite users pw with hashed pw and pass to db
     req.body.password = bcrypt.hashSync(
         req.body.password,
