@@ -13,10 +13,10 @@
 
   <body>
   
-    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;"> 
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #e3f2fd;"> 
       <div class="container-fluid">
         <% if (currentUser) {%>
-        <a class="navbar-brand" href="/list"><%=currentUser.username%>'s To Do List</a>
+        <a class="navbar-brand" href="/list"><%=currentUser.username.charAt(0).toUpperCase() + currentUser.username.slice(1)%>'s To Do List</a>
         <% } else { %> 
           <a class="navbar-brand" href="/list">To Do List</a>
           <% } %> 
@@ -31,7 +31,7 @@
         </button>
         <% } else { %> 
           <% } %> 
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <% if (currentUser) {%>
               <li class="nav-item">
