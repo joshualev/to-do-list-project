@@ -12,6 +12,7 @@ This was my second solo project completed 4 days in week 6 of General Assembly's
 6. `Mongoose`
 7. `Express`
 8. `EJS`
+9. `Heroku`
 
 
 ## Basic Functionality
@@ -34,4 +35,3 @@ This was my second solo project completed 4 days in week 6 of General Assembly's
 1. Have lists be specific to each user ID.
 2. Improve UI.
 
- > To acheieve impossible mode, I would like to integrate game theory by implementing a 'minimax' decision rule.
