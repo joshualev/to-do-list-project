@@ -6,18 +6,18 @@
   <% for (let i = 0; i < list.length; i++) { %> 
     <% if (list[i].category === "Work" && list[i].status === false) { %> 
       <% groupWork++ %> 
-            <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios<%=[i]%>">
-            <a label class="list-group-item rounded-3 py-3" href="<%= baseUrl %>/<%=list[i].id%>" for="listGroupCheckableRadios<%=[i]%>">
-              <%=list[i].title%>
-              <span class="d-block small opacity-50">
-                <%=list[i].category %> 
-                <br> 
-                <%=list[i].priority%> priority 
-                <br>
-                <% if (list[i].dateDue) { %> 
-                  Due by <%=list[i].dateDue.toString().slice(0,10) %> 
-                <% } %> 
-              </span>
+          <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios<%=[i]%>">
+          <a label class="list-group-item rounded-3 py-3" href="<%= baseUrl %>/<%=list[i].id%>" for="listGroupCheckableRadios<%=[i]%>">
+            <%=list[i].title.charAt(0).toUpperCase() + list[i].title.slice(1)%>
+            <span class="d-block small opacity-50">
+              <%=list[i].category %> 
+              <br> 
+              <%=list[i].priority%> priority 
+              <br>
+              <% if (list[i].dateDue) { %> 
+                Due by <%=list[i].dateDue.toString().slice(0,10) %> 
+              <% } %> 
+            </span>
             </label>
             <div>
               <form class="formWithButtons" action="<%= baseUrl %>/<%= list[i].id %>?_method=put" method="post">
@@ -36,13 +36,11 @@
                 </svg></button>
               </form>    
               </form>
-              </div>
+            </div>
           </a>
     <% } %> 
 <% } %> 
-
 </div>
 <% if (groupWork === 0 ) { %> <h1 class="no-items-category"> There are no list items of this category </h1> <% } %> 
 
-</form> 
 <%- include('../partials/footer.ejs') %>

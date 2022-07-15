@@ -4,6 +4,7 @@ const router = express.Router()
 const List = require('../models/lists')
 
 
+//Apply user authentication to all below routes
 const isAuthenticated = (req, res, next) => {
     if (req.session.currentUser) {
       return next()
@@ -14,8 +15,7 @@ const isAuthenticated = (req, res, next) => {
 router.use(isAuthenticated)
 
 
-
-
+//GET   /
 router.get('/', (req,res) => {
     List.find()
     .exec()
@@ -32,7 +32,7 @@ router.get('/', (req,res) => {
 })
 
 
-//GET   /categories
+//GET   /completed
 router.get('/completed', (req,res) => {
         List.find()
     .then((list) => {
@@ -47,6 +47,7 @@ router.get('/completed', (req,res) => {
         console.log('error detected on GET category: ', err)
     })
 })
+//GET   /education
 router.get('/education', (req,res) => {
     List.find()
     .then((list) => {
@@ -61,6 +62,7 @@ router.get('/education', (req,res) => {
         console.log('error detected on GET category: ', err)
     })
 })
+//GET   /personal
 router.get('/personal', (req,res) => {
     List.find()
     .then((list) => {
@@ -75,6 +77,7 @@ router.get('/personal', (req,res) => {
         console.log('error detected on GET category: ', err)
     })
 })
+//GET   /social
 router.get('/social', (req,res) => {
     List.find()
     .then((list) => {
@@ -89,6 +92,7 @@ router.get('/social', (req,res) => {
         console.log('error detected on GET category: ', err)
     })
 })
+//GET   /work
 router.get('/work', (req,res) => {
     List.find()
     .then((list) => {
@@ -104,7 +108,7 @@ router.get('/work', (req,res) => {
     })
 })
 
-
+//GET   /new
 router.get('/new', (req,res) => {
     res.render('new.ejs', {
         baseUrl: req.baseUrl,
@@ -140,7 +144,7 @@ router.put('/', (req,res) => {
 })
 
 
-//DELETE    /:id
+//DELETE  /:id
 router.delete('/completed', (req,res) => {
     List.findOneAndDelete(req.params.id)
     .exec()
@@ -170,7 +174,7 @@ router.get('/:id', (req,res) => {
 })
 
 
-//DELETE    /:id
+//DELETE  /:id
 router.delete('/:id', (req,res) => {
     List.findOneAndDelete(req.params.id)
     .exec()

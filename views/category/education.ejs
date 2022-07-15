@@ -4,25 +4,24 @@
 <div class="todo-tasks list-group list-group-checkable d-grid gap-2 border-0 w-auto">
 <% for (let i = 0; i < list.length; i++) { %> 
     <% if (list[i].category === "Education" && list[i].status === false) { %> 
-    <% groupEducation ++ %> 
-    
-            <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios<%=[i]%>">
-            <a label class="list-group-item rounded-3 py-3" href="<%= baseUrl %>/<%=list[i].id%>" for="listGroupCheckableRadios<%=[i]%>">
-              <%=list[i].title%>
-              <span class="d-block small opacity-50">
-                <%=list[i].category %> 
-                <br> 
-                <%=list[i].priority%> priority 
-                <br>
-                <% if (list[i].dateDue) { %> 
+    <% groupEducation ++ %>  
+        <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios<%=[i]%>">
+          <a label class="list-group-item rounded-3 py-3" href="<%= baseUrl %>/<%=list[i].id%>" for="listGroupCheckableRadios<%=[i]%>">
+          <%=list[i].title.charAt(0).toUpperCase() + list[i].title.slice(1)%>
+          <span class="d-block small opacity-50">
+              <%=list[i].category %> 
+              <br> 
+              <%=list[i].priority%> priority 
+              <br>
+              <% if (list[i].dateDue) { %> 
                   Due by <%=list[i].dateDue.toString().slice(0,10) %> 
-                  <% } %> 
-                </span>
-              </label>
-              <div>
-                <form class="formWithButtons" action="<%= baseUrl %>/<%= list[i].id %>?_method=put" method="post">
-                <input type="checkbox" name="status" value="on" checked hidden>
-                <input type="submit" class="mt-2 btn btn-outline-success" value="Complete">
+                <% } %> 
+          </span>
+          </label>
+          <div>
+            <form class="formWithButtons" action="<%= baseUrl %>/<%= list[i].id %>?_method=put" method="post">
+              <input type="checkbox" name="status" value="on" checked hidden>
+              <input type="submit" class="mt-2 btn btn-outline-success" value="Complete">
                 <object><a class=" mt-2 btn btn-outline-primary" href="<%= baseUrl %>/<%=list[i].id%>/edit">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
@@ -38,13 +37,11 @@
                 </form>
                 </div>
             </a>
-  
-      <% } %>    
-      
+      <% } %>      
   <% } %> 
- 
   </div>
   <div >
-  <% if (groupEducation === 0 ) { %> <h1 class="no-items-category"> There are no list items of this category </h1> <% } %> 
-</div>
+    <% if (groupEducation === 0 ) { %> <h1 class="no-items-category"> There are no list items of this category </h1> <% } %> 
+  </div>
+  
 <%- include('../partials/footer.ejs') %>

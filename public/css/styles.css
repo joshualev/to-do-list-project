@@ -1,12 +1,14 @@
 * {
   font-family: 'Roboto', sans-serif;
 }
-body{
+
+body {
   background-color: #eefcff;
 }
+
 a:link {
-    text-decoration: none;
-  }
+  text-decoration: none;
+}
 
 #change-list input[type=submit],
 #change-list a {
@@ -20,10 +22,9 @@ a:link {
 #change-list a:hover {
   transition: 300ms;
   background-color: #b1d4df;
-    border-color: #135ea0;
-    color: black;
+  border-color: #135ea0;
+  color: black;
 }
-
 
 #add-task {
   transition: 300ms;
@@ -33,44 +34,44 @@ a:link {
   width: 20em;
   margin: auto;
   margin-top: 1em;
-  } 
+} 
 
-  #add-task:hover {
-    transition: 300ms;
-    background-color: #b1d4df;
-    border-color: #b1d4df;
-    color: white;
-    width: 20em;
-    margin: auto;
-    margin-top: 1em;
-  } 
+#add-task:hover {
+  transition: 300ms;
+  background-color: #b1d4df;
+  border-color: #b1d4df;
+  color: white;
+  width: 20em;
+  margin: auto;
+  margin-top: 1em;
+} 
 
-  .no-items-category{
-    display: flex;
-    justify-content: center;
-  }
+.no-items-category{
+  display: flex;
+  justify-content: center;
+}
 
-  .collapsed > .when-open,
-  .not-collapsed > .when-closed {
-    display: none;
-  }
+.collapsed > .when-open,
+.not-collapsed > .when-closed {
+  display: none;
+}
 
-  .complete-tasks a,
-  .complete-tasks button,
-  .complete-tasks input[type=submit] { 
-    transition: 300ms;
-    background-color: #aedfb4;
-    border-color: #aedfb4;
-    color: black;
-  }
-  .complete-tasks a:hover,
-  .complete-tasks button:hover,
-  .complete-tasks input[type=submit]:hover {
-    background-color: #90ee90;
-    border-color: #90ee90;
-    color: black;
-    transition: 300ms;
-  }
+.complete-tasks a,
+.complete-tasks button,
+.complete-tasks input[type=submit] { 
+  transition: 300ms;
+  background-color: #aedfb4;
+  border-color: #aedfb4;
+  color: black;
+}
+.complete-tasks a:hover,
+.complete-tasks button:hover,
+.complete-tasks input[type=submit]:hover {
+  background-color: #90ee90;
+  border-color: #90ee90;
+  color: black;
+  transition: 300ms;
+}
 
 .todo-tasks a,
 .todo-tasks button,
@@ -89,7 +90,6 @@ a:link {
   color: white;
   transition: 300ms;
 }
-
 
 #change-list {
   margin-top: 2em;
@@ -136,67 +136,75 @@ nav li:hover {
     margin: 4rem auto;
   }
   
-  .form-check-input:checked + .form-checked-content {
-    opacity: .5;
-  }
+.form-check-input:checked + .form-checked-content {
+  opacity: .5;
+}
   
-  .form-check-input-placeholder {
-    border-style: dashed;
-  }
-  [contenteditable]:focus {
-    outline: 0;
-  }
-  
-  .list-group-checkable .list-group-item {
-    cursor: pointer;
-  }
-  .list-group-item-check {
-    position: absolute;
-    clip: rect(0, 0, 0, 0);
-  }
-  .list-group-item-check:hover + .list-group-item {
-    background-color: var(--bs-light);
-  }
-  .list-group-item-check:checked + .list-group-item {
-    color: #fff;
-    background-color: var(--bs-blue);
-  }
-  .list-group-item-check[disabled] + .list-group-item,
-  .list-group-item-check:disabled + .list-group-item {
-    pointer-events: none;
-    filter: none;
-    opacity: .5;
-  }
-  
-  .list-group-radio .list-group-item {
-    cursor: pointer;
-    border-radius: .5rem;
-  }
-  .list-group-radio .form-check-input {
-    z-index: 2;
-    margin-top: -.5em;
-  }
-  .list-group-radio .list-group-item:hover,
-  .list-group-radio .list-group-item:focus {
-    background-color: var(--bs-light);
-  }
-  
-  .list-group-radio .form-check-input:checked + .list-group-item {
-    background-color: var(--bs-body);
-    border-color: var(--bs-blue);
-    box-shadow: 0 0 0 2px var(--bs-blue);
-  }
-  .list-group-radio .form-check-input[disabled] + .list-group-item,
-  .list-group-radio .form-check-input:disabled + .list-group-item {
-    pointer-events: none;
-    filter: none;
-    opacity: .5;
-  }
-  .formWithButtons {
-    display: inline;
-  }
-/* ----------------- */
+.form-check-input-placeholder {
+  border-style: dashed;
+}
 
+[contenteditable]:focus {
+  outline: 0;
+}
+  
+.list-group-checkable .list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item-check {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+.list-group-item-check:hover + .list-group-item {
+  background-color: var(--bs-light);
+}
+
+.list-group-item-check:checked + .list-group-item {
+  color: #fff;
+  background-color: var(--bs-blue);
+}
+
+.list-group-item-check[disabled] + .list-group-item,
+.list-group-item-check:disabled + .list-group-item {
+  pointer-events: none;
+  filter: none;
+  opacity: .5;
+}
+  
+.list-group-radio .list-group-item {
+  cursor: pointer;
+  border-radius: .5rem;
+}
+
+.list-group-radio .form-check-input {
+  z-index: 2;
+  margin-top: -.5em;
+}
+
+.list-group-radio .list-group-item:hover,
+.list-group-radio .list-group-item:focus {
+  background-color: var(--bs-light);
+}
+  
+.list-group-radio .form-check-input:checked + .list-group-item {
+  background-color: var(--bs-body);
+  border-color: var(--bs-blue);
+  box-shadow: 0 0 0 2px var(--bs-blue);
+}
+
+.list-group-radio .form-check-input[disabled] + .list-group-item,
+.list-group-radio .form-check-input:disabled + .list-group-item {
+  pointer-events: none;
+  filter: none;
+  opacity: .5;
+}
+
+.formWithButtons {
+  display: inline;
+}
+/* ----------------- */
 
 /* flash messages */
 .flash-messages p {

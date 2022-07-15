@@ -34,7 +34,9 @@
         </div>
     </div>
 
+    <!-- Category and priority -->
     <div class="row justify-content-center mt-3 gap-2">
+    <!-- Category -->
       <div class="card col-xs-6" style="width: 18rem;">
           <div class="card-body">
           <h5 class="card-title">Category</h5>
@@ -52,6 +54,7 @@
           </div>
           </div>
       </div>
+    <!-- Priority -->
       <div class="card col-xs-6" style="width: 18rem;">
           <div class="card-body">
           <h5 class="card-title">Priority</h5>
@@ -69,11 +72,11 @@
             </div>
         </div>
     </div>
-
+     <!-- buttons -->
     <div class="confirm-change-btns mt-5 row" style="max-width: 18rem;">
     <!-- Submit button -->
     <form action="<%=baseUrl%>/new?_method=create" method="create" >
-    <button type="submit" value="Add task" class=" btn btn-outline-primary btn-block mb-4">Add task</button>
+    <button type="submit" value="Add task" class="btn btn-outline-primary btn-block mb-4">Add task</button>
     <a class=" btn btn-outline-primary btn-block mb-4" href="<%= baseUrl %>" role="button">Cancel</a>
     </div>
   </form>

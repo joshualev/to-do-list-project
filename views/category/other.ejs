@@ -12,7 +12,7 @@
           </form>
             <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios<%=[i]%>">
             <a label class="list-group-item rounded-3 py-3" href="<%= baseUrl %>/<%=list[i].id%>" for="listGroupCheckableRadios<%=[i]%>">
-              <%=list[i].title%>
+              <%=list[i].title.charAt(0).toUpperCase() + list[i].title.slice(1)%>
               <span class="d-block small opacity-50">
                 <%=list[i].category %> 
                 <br> 
@@ -45,7 +45,7 @@
   
       <% } %> 
   <% } %> 
-  
   </div>
   <% if (groupOther === 0 ) { %> <h1 class="no-items-category"> There are no list items of this category </h1> <% } %> 
+  
 <%- include('../partials/footer.ejs') %>

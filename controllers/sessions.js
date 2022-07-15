@@ -15,6 +15,7 @@ sessionRouter.get('/login', (req,res) => {
     })
 })
 
+//POST  /login
 sessionRouter.post('/login', (req,res) => {
     User.findOne({ username: req.body.username })
     .exec()

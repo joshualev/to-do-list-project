@@ -8,66 +8,65 @@
     </div>
 
     <form action="<%= baseUrl %>/<%=list.id%>?_method=put" method="post"> 
-
-    <!-- Task title-->
-    <div class="row mb-4">
+        <!-- Task title-->
+        <div class="row mb-4">
+            <div class="col">
+            <div class="form-outline">
+                <label class="form-label" for="title">Title</label>
+                <input type="text" required name="title" id="title" value="<%=list.title.charAt(0).toUpperCase() + list.title.slice(1)%>" class="form-control" />
+            </div>
+            </div>
         <div class="col">
-        <div class="form-outline">
-            <label class="form-label" for="title">Title</label>
-            <input type="text" required name="title" id="title" value="<%=list.title%>" class="form-control" />
-        </div>
-        </div>
-    <div class="col">
 
-    <!-- Date due -->
-    <div class="form-outline mb-4">
-        <div class="date-select">      
-        <!-- <input type="date" required name="dateDue">  -->
-        <div class="col form-outline mb-4">
-            <label class="form-label" for="dateDue">Due by</label>
-            <input id="dateDue" class="form-control" name="dateDue" type="date" value="<%=list.dateDue.toISOString().slice(0,10)%>"
-            min="<%=list.dateDue.toISOString().slice(0,10)%>">
+        <!-- Date due -->
+        <div class="form-outline mb-4">
+            <div class="date-select">      
+            <!-- <input type="date" required name="dateDue">  -->
+            <div class="col form-outline mb-4">
+                <label class="form-label" for="dateDue">Due by</label>
+                <input id="dateDue" class="form-control" name="dateDue" type="date" value="<%=list.dateDue.toISOString().slice(0,10)%>"
+                min="<%=list.dateDue.toISOString().slice(0,10)%>">
+            </div>
+            </div>
         </div>
+            </div>
         </div>
-    </div>
-        </div>
-    </div>
 
-    <!-- Description -->
-    <div class="description-header card border-light ">
-        <div class="card-header">Description</div>
-        <div class="card-body"> 
-        <div class="form-outline mb-6">
-        <% if (list.description) { %> 
-            <textarea class="form-control" name="description" id="description" rows="5" id="description"><%=list.description%></textarea>
-        <% } else { %> 
-            <textarea class="form-control" name="description" id="description" rows="5" id="comment" placeholder="There is no description set"></textarea>
-        <% } %> 
+        <!-- Description -->
+        <div class="description-header card border-light ">
+            <div class="card-header">Description</div>
+            <div class="card-body"> 
+            <div class="form-outline mb-6">
+            <% if (list.description) { %> 
+                <textarea class="form-control" name="description" id="description" rows="5" id="description"><%=list.description.charAt(0).toUpperCase() + list.description.slice(1)%></textarea>
+            <% } else { %> 
+                <textarea class="form-control" name="description" id="description" rows="5" id="comment" placeholder="There is no description set"></textarea>
+            <% } %> 
+            </div>
+            </div>
         </div>
-        </div>
-    </div>
 
-    <div class="row justify-content-center mt-3 gap-2">
-    <div class="card col-xs-6" style="width: 18rem;">
-        <div class="card-body">
-        <h5 class="card-title">Category</h5>
-        <div class="radio">
-            <label><input type="radio" name="category" value="Personal"> Personal</label>
+         <!-- Category -->
+        <div class="row justify-content-center mt-3 gap-2">
+        <div class="card col-xs-6" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">Category</h5>
+            <div class="radio">
+                <label><input type="radio" name="category" value="Personal"> Personal</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="category" value="Social"> Social</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="category" value="Work"> Work</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="category" value="Education" checked> Education</label>
+            </div>
+            </div>
         </div>
-        <div class="radio">
-            <label><input type="radio" name="category" value="Social"> Social</label>
-        </div>
-        <div class="radio">
-            <label><input type="radio" name="category" value="Work"> Work</label>
-        </div>
-        <div class="radio">
-            <label><input type="radio" name="category" value="Education" checked> Education</label>
-        </div>
-        </div>
-    </div>
 
-
-
+       <!-- Priority -->
         <div class="card col-xs-6" style="width: 18rem;">
             <div class="card-body">
             <h5 class="card-title">Priority</h5>
@@ -105,14 +104,15 @@
                     <% } %> 
                 </div>
             </div>
+            </div>
         </div>
-    </div>
-
-    <div class="confirm-change-btns mt-5 row" style="max-width: 18rem;">
-    <!-- Submit button -->
-    <button type="submit" value="Confirm changes" class="btn btn-outline-primary btn-block mb-4">Confirm changes</button>
-    <a class="btn btn-outline-secondary btn-block mb-4" href="<%= baseUrl %>/<%=list.id%>" role="button">Cancel</a>
-    </div>
+        
+        <!-- Buttons -->
+        <div class="confirm-change-btns mt-5 row" style="max-width: 18rem;">
+        <!-- Submit button -->
+        <button type="submit" value="Confirm changes" class="btn btn-outline-primary btn-block mb-4">Confirm changes</button>
+        <a class="btn btn-outline-secondary btn-block mb-4" href="<%= baseUrl %>/<%=list.id%>" role="button">Cancel</a>
+        </div>
 </form>
 
 <%- include('partials/footer.ejs') %>

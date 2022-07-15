@@ -6,6 +6,7 @@ const User = require('../models/users')
 const userRouter = express.Router()
 
 // localhost:3000/users/signup
+//GET   /signup
 userRouter.get('/signup', (req,res) => {
     res.render('users/signup.ejs', {
         currentUser: req.session.currentUser,
@@ -13,8 +14,10 @@ userRouter.get('/signup', (req,res) => {
     })
 })
 
-//Create user AND overwrite users pw with hashed pw and pass to db
-userRouter.post('/', (req,res) => {
+
+//POST  /
+userRouter.post('/login', (req,res) => {
+    //Create user AND overwrite users pw with hashed pw and pass to db
     req.body.password = bcrypt.hashSync(
         req.body.password,
         bcrypt.genSaltSync())
