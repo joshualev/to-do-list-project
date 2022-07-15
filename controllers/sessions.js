@@ -8,7 +8,6 @@ const sessionRouter = express.Router()
 
 // localhost:3000/login
 sessionRouter.get('/login', (req,res) => {
-    console.log(req.session.currentUser)
     res.render('sessions/login.ejs', {
         baseUrl: req.baseUrl,
         currentUser: req.session.currentUser
@@ -38,6 +37,16 @@ sessionRouter.post('/login', (req,res) => {
         }
     })
 })
+
+//GET   /logout
+sessionRouter.get('/logout', (req,res) => {
+    res.render('sessions/logout.ejs', {
+        tabTitle: 'Log Out',
+        baseUrl: req.baseUrl,
+        currentUser: req.session.currentUser
+    })
+})
+
 
 // localhost:3000/logout
 sessionRouter.delete('/logout', (req,res) => {

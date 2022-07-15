@@ -211,9 +211,10 @@ nav li:hover {
   margin: 0 auto;
   text-align: center;
   padding: 1em;
-  width: 20em;
+  /* width: 50%; */
+  max-width: 300px;
   border-radius: 8px;
-  opacity: 0.6;
+  opacity: 0.3;
 }
 
 .flash-messages .success {

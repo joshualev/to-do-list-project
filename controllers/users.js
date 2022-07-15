@@ -23,7 +23,7 @@ userRouter.post('/', (req,res) => {
         bcrypt.genSaltSync())
 User.create(req.body)
 .then((user) => {
-    // req.flash('success', 'Account created! Try signing in')
+    req.flash('success', 'Account created! Try signing in')
     console.log('created user: ', user )
     res.redirect('/list')
    
