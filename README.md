@@ -3,6 +3,8 @@ This application is a simple todo list with basic functionality to make a full C
 
 This was my second solo project completed 4 days in week 6 of General Assembly's Software Engineering Immersive 12 week bootcamp.
 
+The app is hosted on Heroku and can be accessed via this link: https://mytodolistbyjosh.herokuapp.com/list
+
 ## This application was built with
 1. `HTML`
 2. `CSS`
