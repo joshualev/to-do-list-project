@@ -5,6 +5,13 @@ This was my second solo project completed 4 days in week 6 of General Assembly's
 
 The app is hosted on Render.com, to view the demo [click here](https://to-do-list-toj7.onrender.com/login)
 
+You can use the sample admin account details below to view full CRUD features:
+
+```
+username: demo
+password: demo
+```
+
 ## This application was built with
 1. `HTML`
 2. `CSS`
