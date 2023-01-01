@@ -14,7 +14,8 @@ The app is hosted on Heroku and can be accessed via this link: https://mytodolis
 6. `Mongoose`
 7. `Express`
 8. `EJS`
-9. `Heroku`
+
+Application was deployed with render.com
 
 
 ## Basic Functionality
