@@ -3,7 +3,7 @@ This application is a simple todo list with basic functionality to make a full C
 
 This was my second solo project completed 4 days in week 6 of General Assembly's Software Engineering Immersive 12 week bootcamp.
 
-The app is hosted on Heroku and can be accessed via this link: https://mytodolistbyjosh.herokuapp.com/list
+The app is hosted on Render.com, to view the demo [click here](https://to-do-list-toj7.onrender.com/login)
 
 ## This application was built with
 1. `HTML`
@@ -14,9 +14,6 @@ The app is hosted on Heroku and can be accessed via this link: https://mytodolis
 6. `Mongoose`
 7. `Express`
 8. `EJS`
-
-Application was deployed with render.com
-
 
 ## Basic Functionality
 1. `Log in and log out`
